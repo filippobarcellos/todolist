@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { toggleTodo } from '../todos/todosSlice';
+import { BsTrash } from 'react-icons/bs';
+import { toggleTodo, removeTodo } from '../todos/todosSlice';
 
 const Todo = ({ todo }) => {
   const dispatch = useDispatch();
@@ -11,7 +12,8 @@ const Todo = ({ todo }) => {
         checked={todo.completed}
         onChange={() => dispatch(toggleTodo(todo.id))}
       />
-      {todo.text}
+      <span>{todo.text}</span>
+      <BsTrash onClick={() => dispatch(removeTodo(todo.id))} />
     </li>
   );
 };
