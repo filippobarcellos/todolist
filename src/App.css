@@ -18,6 +18,11 @@ a {
   color: #000;
 }
 
+button {
+  cursor: pointer;
+  outline: none;
+}
+
 .filters {
   display: flex;
   width: 300px;
@@ -29,6 +34,12 @@ a {
 
 .filters li {
   margin-left: 12px;
+}
+
+.filters li button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .add {
@@ -53,7 +64,6 @@ a {
   border: 0;
   border-radius: 4px;
   background: #2f80ed;
-  cursor: pointer;
   color: #fff;
 }
 
