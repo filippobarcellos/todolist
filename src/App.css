@@ -79,6 +79,15 @@ button {
   align-items: center;
 }
 
+.todos li svg {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.todos li svg:hover {
+  color: red;
+}
+
 .todos li.completed {
   text-decoration: line-through;
 }
