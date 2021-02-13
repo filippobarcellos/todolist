@@ -1,17 +1,26 @@
-function Filters() {
+import { useDispatch } from 'react-redux';
+import { setFilter } from './filtersSlice';
+
+const buttons = [
+  { name: 'All', value: 'all' },
+  { name: 'Active', value: 'active' },
+  { name: 'Completed', value: 'completed' },
+];
+
+const Filters = () => {
+  const dispatch = useDispatch();
+
   return (
     <ul className="filters">
-      <li>
-        <a href="/test">All</a>
-      </li>
-      <li>
-        <a href="/test">Active</a>
-      </li>
-      <li>
-        <a href="/test">Completed</a>
-      </li>
+      {buttons.map(({ name, value }) => (
+        <li key={name}>
+          <button value={value} onClick={() => dispatch(setFilter(value))}>
+            {name}
+          </button>
+        </li>
+      ))}
     </ul>
   );
-}
+};
 
 export default Filters;
