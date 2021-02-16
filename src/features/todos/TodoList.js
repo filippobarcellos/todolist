@@ -20,7 +20,7 @@ const TodoList = () => {
   const todos = useSelector((state) => getTodosByFilter(state.todos, filter));
 
   return (
-    <ul className="todos">
+    <ul data-testid="todoList" className="todos">
       {todos.map((todo, i) => (
         <Todo key={i} todo={todo} />
       ))}
