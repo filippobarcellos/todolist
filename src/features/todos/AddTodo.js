@@ -20,7 +20,7 @@ const AddTodo = () => {
       <input
         value={todoText}
         onChange={onChange}
-        placeholder="Walk the dog..."
+        placeholder="What needs to be done today?"
       />
       <button onClick={onAddTodo}>Add</button>
     </div>

@@ -11,7 +11,7 @@ const Filters = () => {
   const dispatch = useDispatch();
 
   return (
-    <ul className="filters">
+    <ul data-testid="filters" className="filters">
       {buttons.map(({ name, value }) => (
         <li key={name}>
           <button value={value} onClick={() => dispatch(setFilter(value))}>
