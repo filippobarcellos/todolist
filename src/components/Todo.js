@@ -1,19 +1,17 @@
-import { useDispatch } from 'react-redux';
+import { useTodo } from '../context/useTodo';
 import { BsTrash } from 'react-icons/bs';
-import { toggleTodo, removeTodo } from '../todos/todosSlice';
 
 const Todo = ({ todo }) => {
-  const dispatch = useDispatch();
-
+  const { toggleTodo, removeTodo } = useTodo();
   return (
     <li className={todo.completed ? 'completed' : null}>
       <input
         type="checkbox"
         checked={todo.completed}
-        onChange={() => dispatch(toggleTodo(todo.id))}
+        onChange={() => toggleTodo(todo.id)}
       />
       <span>{todo.text}</span>
-      <BsTrash onClick={() => dispatch(removeTodo(todo.id))} />
+      <BsTrash onClick={() => removeTodo(todo.id)} />
     </li>
   );
 };

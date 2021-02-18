@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../features/todos/todosSlice';
+import { useTodo } from '../context/useTodo';
 
 const AddTodo = () => {
-  const dispatch = useDispatch();
-
+  const { addTodo } = useTodo();
   const [todoText, setTodoText] = useState('');
 
   const onChange = (e) => setTodoText(e.target.value);
 
   const onAddTodo = () => {
-    dispatch(addTodo(todoText));
+    addTodo(todoText);
     //reset input
     setTodoText('');
   };

@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { setFilter } from './filtersSlice';
+import { useEffect } from 'react';
+import { useTodo } from '../context/useTodo';
 
 const buttons = [
   { name: 'All', value: 'all' },
@@ -8,13 +8,17 @@ const buttons = [
 ];
 
 const Filters = () => {
-  const dispatch = useDispatch();
+  const { filterTodos, setStatus } = useTodo();
+
+  // const handleFilter = (value) => {
+  //   filterTodos(value);
+  // };
 
   return (
     <ul data-testid="filters" className="filters">
       {buttons.map(({ name, value }) => (
         <li key={name}>
-          <button value={value} onClick={() => dispatch(setFilter(value))}>
+          <button value={value} onClick={() => setStatus(value)}>
             {name}
           </button>
         </li>
