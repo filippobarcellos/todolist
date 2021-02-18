@@ -3,7 +3,7 @@
 <h1 align="center">Todo List</h1>
 
 <div align="center">
-   Todo List built with React + Redux.
+   Todo List built with React + Context Api + React Testing Library.
 </div>
 
 <div align="center">
